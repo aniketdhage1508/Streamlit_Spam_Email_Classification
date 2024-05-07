@@ -41,7 +41,7 @@ def spam_checker():
             else:
                 st.error("This email is spam.")
         else:
-            st.markdown("Please enter an email text.")
+            st.error("Please enter an email text.")
 
 def spam_score():
     
@@ -62,9 +62,9 @@ def spam_score():
             X = feature_extraction.transform([mail_text])
             prediction = loaded_model.predict_proba(X)
             score = prediction[0][1]
-            st.markdown(f"The spam score is {score:.2f}.")
+            st.success(f"The spam score is {score:.2f}.")
         else:
-            st.markdown("Please enter an email text.")
+            st.error("Please enter an email text.")
 
 # Add pages to app
 pages = {
