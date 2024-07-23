@@ -62,6 +62,7 @@ def spam_score():
             X = feature_extraction.transform([mail_text])
             prediction = loaded_model.predict_proba(X)
             score = prediction[0][1]
+            score = 1-score
             st.success(f"The spam score is {score:.2f}.")
         else:
             st.error("Please enter an email text.")
