@@ -56,6 +56,8 @@ def spam_score():
     # Add the text to the second column
     col2.markdown("# Spam Score")
 
+    col2.markdown("The 0 represents the likeliness of mail being not spam and 1 represents mail being spam.\nThis score basically represents the likeliness of the email getting classifed in a particular class.")
+
     mail_text = st.text_area("Enter the email text:")
     if st.button("Score"):
         if mail_text:
